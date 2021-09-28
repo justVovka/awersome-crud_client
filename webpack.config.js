@@ -1,18 +1,24 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const isDev = process.env.NODE_ENV === 'development';
+
+const getFileName = ext => `bundle.[hash].${ext}`;
 
 module.exports = {
-  entry: './src/index.tsx',
+  context: path.resolve(__dirname, 'src'),
+  entry: 'index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: getFileName('js'),
   },
   resolve: {
     modules: [path.join(__dirname, 'src'), 'node_modules'],
     alias: {
-      react: path.join(__dirname, 'node_modules', 'react'),
+      '@': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
@@ -20,25 +26,38 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'ts-loader',
-        },
+          loader: "ts-loader",
+          // options: {
+          //   presets: ['@babel/preset-env', '@babel/preset-typescript'],
+          //   plugins: [
+          //     '@babel/plugin-proposal-class-properties'
+          //   ]
+          // }
+        }
       },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
-      },
+      // {
+      //   test: /\.tsx$/,
+      //   exclude: /node_modules/,
+      //   use: {
+      //     loader: "babel-loader",
+      //     options: {
+      //       presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
+      //     }
+      //   }
+      // }
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
-      template: './public/index.html',
+      template: path.resolve(__dirname, 'public', 'index.html'),
     }),
   ],
+  devServer: {
+    port: 3000,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+  },
+  devtool: isDev ? 'source-map' : false,
 };
