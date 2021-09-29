@@ -1,0 +1,8 @@
+
+export type User = {
+  id: string,
+  name: string,
+  surname: string,
+  birthDate: Date,
+  profession: string
+}

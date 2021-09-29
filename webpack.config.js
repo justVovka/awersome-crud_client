@@ -17,6 +17,8 @@ module.exports = {
     modules: [path.join(__dirname, 'src'), 'node_modules'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      '@types': path.resolve(__dirname, 'src', 'types'),
+      '@utils': path.resolve(__dirname, 'src', 'utils'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
@@ -26,25 +28,9 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "ts-loader",
-          // options: {
-          //   presets: ['@babel/preset-env', '@babel/preset-typescript'],
-          //   plugins: [
-          //     '@babel/plugin-proposal-class-properties'
-          //   ]
-          // }
+          loader: "babel-loader",
         }
       },
-      // {
-      //   test: /\.tsx$/,
-      //   exclude: /node_modules/,
-      //   use: {
-      //     loader: "babel-loader",
-      //     options: {
-      //       presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
-      //     }
-      //   }
-      // }
     ],
   },
   plugins: [
