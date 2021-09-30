@@ -1,0 +1,30 @@
+[
+  {
+    "id": "7ad2e327-e619-4cfd-a1a9-d6e115459340",
+    "name": "Vladimir",
+    "surname": "Petrov",
+    "birthdate": "1991-01-07T21:00:00.000Z",
+    "profession": "Web Developer"
+  },
+  {
+    "id": "cdce49d1-255b-49f4-96dc-11906334f278",
+    "name": "Pavel",
+    "surname": "Ivanov",
+    "birthdate": "1990-01-02T21:00:00.000Z",
+    "profession": "Back-End Developer"
+  },
+  {
+    "id": "e0b1f26f-7a71-477a-bd02-5700a28161ff",
+    "name": "Peter",
+    "surname": "Volodin",
+    "birthdate": "2021-09-21T21:00:00.000Z",
+    "profession": "Team Lead"
+  },
+  {
+    "id": "e7364323-2737-4d4d-95f1-8e4ddf9b9c8f",
+    "name": "Sergey",
+    "surname": "Antonov",
+    "birthdate": "1993-05-02T20:00:00.000Z",
+    "profession": "QA-ingeneer"
+  }
+]

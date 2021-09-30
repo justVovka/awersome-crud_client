@@ -3,6 +3,6 @@ export type User = {
   id: string,
   name: string,
   surname: string,
-  birthDate: Date,
+  birthdate: Date,
   profession: string
 }

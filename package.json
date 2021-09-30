@@ -60,6 +60,11 @@
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.3.0"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^@mocks/(.*)$": "<rootDir>/src/__mock__/$1"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
