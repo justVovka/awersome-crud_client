@@ -5,7 +5,8 @@
       "@app/*": ["src/*"],
       "@types/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
-      "@mocks/*": ["src/__mock__/*"]
+      "@mocks/*": ["src/__mock__/*"],
+      "@store/*": ["src/store/*"]
     }
   }
 }
