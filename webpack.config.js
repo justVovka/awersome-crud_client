@@ -16,10 +16,11 @@ module.exports = {
   resolve: {
     modules: [path.join(__dirname, 'src'), 'node_modules'],
     alias: {
-      'app': path.resolve(__dirname, './src'),
-      'types': path.resolve(__dirname, './src/types'),
-      'utils': path.resolve(__dirname, './src/utils'),
-      'mocks': path.resolve(__dirname, './src/__mock__')
+      '@app': path.resolve(__dirname, './src'),
+      '@types': path.resolve(__dirname, './src/types'),
+      '@utils': path.resolve(__dirname, './src/utils'),
+      '@mocks': path.resolve(__dirname, './src/__mock__'),
+      '@store': path.resolve(__dirname, './src/store'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
